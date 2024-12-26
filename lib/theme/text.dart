@@ -3,10 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukinen/theme/color.dart';
 
 class TextDesign {
-   TextStyle navText = GoogleFonts.poppins(
-    fontSize: 14,
-    fontWeight: FontWeight.bold,
-    color: const Color.fromARGB(255, 5, 5, 5),
+  TextStyle navText = GoogleFonts.poppins(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: MyColor.white,
   );
   TextStyle buttonText = GoogleFonts.poppins(
     fontSize: 18,
@@ -23,7 +23,7 @@ class TextDesign {
   TextStyle pageTitle = GoogleFonts.poppins(
     fontSize: 18,
     fontWeight: FontWeight.w800,
-    color: MyColor.headerBlue,
+    color: MyColor.white,
   );
   TextStyle input = GoogleFonts.lato(
     fontSize: 16,
@@ -43,7 +43,7 @@ class TextDesign {
   TextStyle validator = GoogleFonts.lato(
     fontSize: 12,
     fontWeight: FontWeight.w600,
-    color: MyColor.containerRed,
+    color: MyColor.red,
   );
   TextStyle bodyText = GoogleFonts.lato(
     fontSize: 12,
@@ -70,8 +70,8 @@ class TextDesign {
   );
 
   TextStyle fieldHint = GoogleFonts.poppins(
-    fontSize: 18,
-    fontWeight: FontWeight.w800,
-    color: MyColor.black,
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: MyColor.gray,
   );
 }

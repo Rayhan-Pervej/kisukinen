@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kisukinen/screens/auth/email_login.dart';
 import 'package:kisukinen/theme/color.dart';
 import 'package:kisukinen/theme/text.dart';
 
@@ -13,7 +14,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyColor.containerPink,
+      backgroundColor: MyColor.softBlue,
       body: Stack(
         children: [
           Positioned(
@@ -30,7 +31,7 @@ class _LoginState extends State<Login> {
             child: Container(
               width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
-                  color: MyColor.containerWhite,
+                  color: MyColor.white,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(15),
                       topRight: Radius.circular(15))),
@@ -89,7 +90,7 @@ class _LoginState extends State<Login> {
                   'Sign Up!',
                   style: TextDesign().buttonText.copyWith(
                       fontSize: 12,
-                      color: MyColor.containerPink,
+                      color: MyColor.softBlue,
                       fontWeight: FontWeight.w600),
                 ),
               ),
@@ -104,7 +105,7 @@ class _LoginState extends State<Login> {
     return OutlinedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(
-          backgroundColor: MyColor.containerWhite,
+          backgroundColor: MyColor.white,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           padding: const EdgeInsets.symmetric(vertical: 10)),
@@ -133,11 +134,11 @@ class _LoginState extends State<Login> {
     return OutlinedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(
-          backgroundColor: MyColor.containerBlue,
+          backgroundColor: MyColor.softBlue,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           padding: const EdgeInsets.symmetric(vertical: 10),
-          side: const BorderSide(color: MyColor.containerBlue)),
+          side: const BorderSide(color: MyColor.softBlue)),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Row(
@@ -150,8 +151,9 @@ class _LoginState extends State<Login> {
             ),
             Text(
               "Continue with Facebook",
-              style: TextDesign().bodyText.copyWith(
-                  fontWeight: FontWeight.bold, color: MyColor.containerWhite),
+              style: TextDesign()
+                  .bodyText
+                  .copyWith(fontWeight: FontWeight.bold, color: MyColor.white),
             )
           ],
         ),
@@ -161,9 +163,14 @@ class _LoginState extends State<Login> {
 
   Widget _email() {
     return OutlinedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const EmailLogin()),
+        );
+      },
       style: ElevatedButton.styleFrom(
-          backgroundColor: MyColor.containerWhite,
+          backgroundColor: MyColor.white,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           padding: const EdgeInsets.symmetric(vertical: 10)),

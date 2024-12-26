@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kisukinen/screens/auth/login.dart';
+import 'package:kisukinen/screens/pages/navbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,14 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Kisukinen',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Login(),
+      home: Navbar(),
     );
   }
 }
