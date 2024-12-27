@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "897048472328",
+    "project_id": "kisukinen",
+    "storage_bucket": "kisukinen.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897048472328:android:3ccf477b4facb2ca3bdabd",
+        "android_client_info": {
+          "package_name": "com.example.kisukinen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897048472328-idbq1ct18so640ss3asagughb9amveh8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kisukinen",
+            "certificate_hash": "884416d7ac51df2a9466a6394261b5442c227ad3"
+          }
+        },
+        {
+          "client_id": "897048472328-e3be24nh0fdb90nhptb1qu5s1nkurjsh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAikfkiCnlMBKG5r3poG1-_qYEbzvaDmfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897048472328-e3be24nh0fdb90nhptb1qu5s1nkurjsh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "897048472328-m6gj8ifqm1sb95es0n9t6a6uboccho68.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.kisukinen"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

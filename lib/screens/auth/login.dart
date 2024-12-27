@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kisukinen/screens/auth/email_login.dart';
+import 'package:kisukinen/screens/auth/signup.dart';
 import 'package:kisukinen/theme/color.dart';
 import 'package:kisukinen/theme/text.dart';
 
@@ -83,7 +84,12 @@ class _LoginState extends State<Login> {
                   ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignUp()),
+                );
+              },
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4),
                 child: Text(
