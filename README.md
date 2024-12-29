@@ -1,5 +1,6 @@
 # kisukinen
- An e-commerce website, where you can buy your necessary items. 
+ An e-commerce website, where you can buy your necessary items.
+ More to be added soon...
 
 # Tools
  1. Flutter
