@@ -1,5 +1,5 @@
 # kisukinen
- An e-commerce website, where you can buy your necessary items./n
+ An e-commerce website, where you can buy your necessary items.
  More to be added soon...
 
 # Tools
