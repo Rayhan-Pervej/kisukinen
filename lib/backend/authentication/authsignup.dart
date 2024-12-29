@@ -63,7 +63,7 @@ class AuthSignup extends GetxController {
           title:
               "Congratulations ${firstNameController.text.trim()} ${lastNameController.text.trim().camelCase}");
 
-      Get.to(() => const Navbar());
+      Get.offAll(() => const Navbar());
     } catch (e) {
       // Catch and show errors
       Screenloader.stopLoading();

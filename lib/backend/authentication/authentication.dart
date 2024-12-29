@@ -9,33 +9,58 @@ class Authentication extends GetxController {
 
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
+  var isLoggedIn = false.obs;
 
-  screenRedirect() async {
-    deviceStorage.writeIfNull("isLogin", true);
+  //is logged in ?
+  @override
+  void onInit() {
+    super.onInit();
+    checkLoginStatus();
+  }
+
+  void checkLoginStatus() {
+    // Check if user token or any indicator of login exists
+    String? token = deviceStorage.read('userToken');
+    isLoggedIn.value = token != null;
+  }
+
+  void login(String token) {
+    deviceStorage.write('userToken', token);
+    isLoggedIn.value = true;
+  }
+
+  void logout() {
+    deviceStorage.remove('userToken');
+    isLoggedIn.value = false;
   }
 
   //register
 
- Future<UserCredential?> registerWithEmailAndPassword(
-    String email, String password) async {
-  try {
-    return await _auth.createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
-  } on FirebaseAuthException catch (e) {
-    Snackbar.errorSnackbar(
-      title: 'Something went wrong',
-      message: e.message ?? 'An unknown error occurred.',
-    );
-    return null; // Return null to indicate failure
-  } catch (e) {
-    Snackbar.errorSnackbar(
-      title: 'Unexpected Error',
-      message: 'An unexpected error occurred. Please try again.',
-    );
-    return null; // Return null for generic errors as well
-  }
-}
+  Future<UserCredential?> registerWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      final userCredential = await _auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
 
+      String? token = await userCredential.user?.getIdToken();
+      if (token != null) {
+        login(token);
+      }
+      return userCredential;
+    } on FirebaseAuthException catch (e) {
+      Snackbar.errorSnackbar(
+        title: 'Something went wrong',
+        message: e.message ?? 'An unknown error occurred.',
+      );
+      return null; // Return null to indicate failure
+    } catch (e) {
+      Snackbar.errorSnackbar(
+        title: 'Unexpected Error',
+        message: 'An unexpected error occurred. Please try again.',
+      );
+      return null; // Return null for generic errors as well
+    }
+  }
 }

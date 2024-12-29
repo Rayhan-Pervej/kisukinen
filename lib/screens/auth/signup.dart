@@ -6,7 +6,6 @@ import 'package:kisukinen/components/input_widgets/password_field.dart';
 import 'package:kisukinen/services/utils/validators.dart';
 import 'package:kisukinen/theme/color.dart';
 import 'package:kisukinen/theme/text.dart';
-import '../../components/popups/snackbar.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});

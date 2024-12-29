@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:kisukinen/backend/authentication/authlogin.dart';
 import 'package:kisukinen/components/input_widgets/input_field.dart';
 import 'package:kisukinen/components/input_widgets/password_field.dart';
 import 'package:kisukinen/screens/pages/navbar.dart';
@@ -15,6 +18,7 @@ class EmailLogin extends StatefulWidget {
 }
 
 class _EmailLoginState extends State<EmailLogin> {
+  final controller = Get.put(AuthLogin());
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -59,11 +63,7 @@ class _EmailLoginState extends State<EmailLogin> {
                 width: double.infinity,
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil(
-                          (context),
-                          MaterialPageRoute(
-                              builder: (context) => const Navbar()),
-                          (route) => false);
+                      controller.login();
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: MyColor.yellow,
@@ -85,15 +85,12 @@ class _EmailLoginState extends State<EmailLogin> {
   }
 
   Widget _form() {
-    final fromKey = GlobalKey<FormState>();
-    final emailController = TextEditingController();
-    final passwordController = TextEditingController();
     return Form(
-        key: fromKey,
+        key: controller.loginFormKey,
         child: Column(
           children: [
             InputField(
-              controller: emailController,
+              controller: controller.emailController,
               fieldLabel: "Email",
               backgroundColor: Colors.transparent,
               hintText: "Enter Your Email",
@@ -105,7 +102,7 @@ class _EmailLoginState extends State<EmailLogin> {
               height: 10,
             ),
             PasswordField(
-              password: passwordController,
+              password: controller.passwordController,
               fieldLabel: "Password",
               hintText: "Enter Your Password",
               backgroundColor: Colors.transparent,

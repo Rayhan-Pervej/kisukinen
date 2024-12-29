@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:kisukinen/backend/authentication/authentication.dart';
 import 'package:kisukinen/components/button_widgets/navbar_floatbutton.dart';
 import 'package:kisukinen/screens/pages/offers/offers.dart';
 import 'package:kisukinen/theme/color.dart';
+import '../../components/popups/snackbar.dart';
 import '../auth/login.dart';
 import 'categories/categories_navbar.dart';
 import 'home/home.dart';
@@ -31,10 +34,11 @@ class _NavbarState extends State<Navbar> {
             ? [
                 IconButton(
                   onPressed: () {
-                    Navigator.pushAndRemoveUntil(
-                        (context),
-                        MaterialPageRoute(builder: (context) => const Login()),
-                        (route) => false);
+                    final authController = Get.find<Authentication>();
+                    authController.logout();
+                    Get.offAll(() => const Login());
+                    Snackbar.warningSnackbar(
+                        title: 'Log out', message: 'Thank you');
                   },
                   icon: const Icon(
                     FontAwesomeIcons.arrowRightFromBracket,
