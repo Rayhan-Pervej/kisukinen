@@ -20,3 +20,7 @@
 | Product List     | Category         | Description      |
 |-------------------|------------------|------------------|
 | <img src="Image/productlist.png" alt="Product List Image" width="150"> | <img src="Image/Category.png" alt="Category Image" width="150"> | <img src="Image/Description.png" alt="Description Image" width="150"> |
+
+| Product List     |
+|-------------------|
+| <img src="Image/Cart.png" alt="Cart Image" width="150"> |
