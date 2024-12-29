@@ -9,9 +9,9 @@
 
 # App Picture
 
-| Signup           | Login            | Login2           |
+|     Login      | Login2            | Signup        |
 |-------------------|------------------|------------------|
-| <img src="Image/signup.png" alt="Signup Image" width="150"> | <img src="Image/login.png" alt="Login Image" width="150"> | <img src="Image/Login2.png" alt="Login2 Image" width="150"> |
+| <img src="Image/Login.png" alt="Login Image" width="150"> | <img src="Image/Login2.png" alt="Login2 Image" width="150"> | <img src="Image/Signup.png" alt="Signup Image" width="150"> |
 
 | Home             | Home2            | Profile          |
 |-------------------|------------------|------------------|
