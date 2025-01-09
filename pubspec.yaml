@@ -14,6 +14,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  
+  # AppWrite
+  appwrite: ^13.0.0
+
+
   # firebase
   firebase_core: ^3.9.0
   firebase_auth: ^5.3.4
