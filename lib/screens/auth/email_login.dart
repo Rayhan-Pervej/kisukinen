@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:kisukinen/backend/authentication/authlogin.dart';
 import 'package:kisukinen/components/input_widgets/input_field.dart';
 import 'package:kisukinen/components/input_widgets/password_field.dart';
-import 'package:kisukinen/screens/pages/navbar.dart';
 import 'package:kisukinen/services/utils/validators.dart';
 import 'package:kisukinen/theme/color.dart';
 import 'package:kisukinen/theme/text.dart';

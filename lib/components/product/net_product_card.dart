@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:kisukinen/components/image/net_product_image.dart';
 
 import '../../theme/color.dart';
 import '../../theme/text.dart';
 import '../image/product_image.dart';
 
-class ProdcutCard extends StatelessWidget {
-  const ProdcutCard({
+class NetProductCard extends StatelessWidget {
+  const NetProductCard({
     super.key,
     this.width = 120,
     required this.imageUrl,
@@ -52,7 +53,7 @@ class ProdcutCard extends StatelessWidget {
             SizedBox(
               child: Stack(
                 children: [
-                  VCardImage(
+                  NetProductImage(
                     imageUrl: imageUrl,
                   ),
                   Positioned(

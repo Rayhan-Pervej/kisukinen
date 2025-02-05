@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:kisukinen/backend/Mongodb/connection.dart';
 import 'package:kisukinen/backend/authentication/authentication.dart';
 import 'package:kisukinen/backend/bindings/generalbindings.dart';
 import 'package:kisukinen/firebase_options.dart';
@@ -10,6 +11,8 @@ import 'package:kisukinen/screens/pages/navbar.dart';
 
 
 Future<void> main() async {
+  final dbController = Get.put(ConnectDatabase());
+  await dbController.connectToDatabase();
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
 

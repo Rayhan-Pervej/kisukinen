@@ -45,10 +45,8 @@ class Authentication extends GetxController {
       );
 
       String? token = await userCredential.user?.getIdToken();
-      if (token != null) {
-        login(token);
-      }
-      return userCredential;
+      login(token!);
+          return userCredential;
     } on FirebaseAuthException catch (e) {
       Snackbar.errorSnackbar(
         title: 'Something went wrong',
